@@ -3,7 +3,10 @@
 Created on Sat Aug 13 11:27:03 2022
 
 @author: Shaik Sohail
+
 """
+
+import sys
 
 try:
     # Inputs from the user
@@ -104,8 +107,12 @@ try:
     print("The net income for the given gross income is",net_income)
         
         
-except:
-    print("please enter valid formats, marital status should be a string monthly hours, wage rate and bonus should be numbers")
+except ValueError:
+    print("please enter valid formats, marital status should be a string.  Monthly hours, wage rate and bonus should be numbers")
+
+except Exception :
+    exc_type, fname, exc_tb = sys.exc_info()
+    print(exc_type, "Line number: "+ str(exc_tb.tb_lineno))
 
 
 
